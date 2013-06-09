@@ -18,7 +18,8 @@ start(_Type, _Args) ->
                                      ]),
 
     {ok, _} = cowboy:start_http(http, 100, [{port, 8888}], [
-                                                            {env, [{dispatch, Dispatch}]}
+                                                            {env, [{dispatch, Dispatch}]},
+                                                            {onresponse, fun newrelic_example_responder:respond/4}
                                                            ]),
 
     %% start up the things we need
