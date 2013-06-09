@@ -1,0 +1,9 @@
+%% -*- mode: erlang;-*-
+[
+ {newrelic,
+  [
+   %%% To enable new relic metrics uncomment the next line and fill in your key
+   %% {license_key, ""},
+   {application_name, "Newrelic Example Application"}]
+ }
+].
